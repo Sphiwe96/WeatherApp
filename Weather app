@@ -1,0 +1,85 @@
+<! DOCTYPE html> <html> <head>
+<title>Weather App</title> ‹link rel="stylesheet"
+href="styles.oss"> </ head> <body>
+<div class="weather-app"> <h1>Weather App</h1> <input type="text" id="cityInput"
+placeholder= "Enter city name">
+<button onclick="getweather ( ) ">Get
+Weather</button>
+<div id="weatherResult"›</div> </div>
+<script src="weatherApp.js"></script> </ body> </html>
+function getweather ( ) {
+
+const apikey = 'b95f179627c8dd37f41e1be6e3250e19'; //
+Replace with your actual API key
+const city
+document. getElementById( 'cityInput') . valu e;
+const uri = "https : / /
+api.openweathermap.org/data/2.5/weather? q=${city}&appid=${apiKey}&units=metric";
+fetch (url)
+.then (response => response. ison ( ))
+•then (data => {
+const weatherResult =
+document. getElementById( 'weatherResult');
+const temperature = data.main.temp;
+const description
+
+body {
+font-family: Arial, sans-serif; text-align: center:
+margin: 20px;
+}
+.weather-app {
+max-width: 400px; margin: 0 auto;
+}
+input {
+padding: 5px;
+margin-right: 5px;
+}
+button {
+padding: 5px 10px; background-color:
+#4CAF50;
+color: white; border: none;
+cursor: pointer;
+}
+}
+}
+button: hover {
+background-color: #45a049
+}
+#weatherResults { margin-top:20px;
+}
+
+=
+
+data.weather [0 ].description;
+
+const cityName = data.name;
+
+weatherResult. innerHTML = <p>City:
+
+${cityName}</p>
+
+<p>Temperature: ${temperature} &#8451; </ p>
+
+<p>Description: ${description}</p>';
+
+})
+
+.catch (error =>
+
+console. log ('Error fetching weather data:', error);
+
+const weatherResult =
+
+document. getElementById( 'weatherresult');
+
+weatherResult. innerHTML
+
+=
+
+City not
+
+found
+
+} );
+
+}
